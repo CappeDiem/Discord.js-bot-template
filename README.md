@@ -32,3 +32,10 @@ and on cmd ty cd "then paste the location" and enter
 Then do in the cmd ``npm i discord.js`` to install discord.js 
 what is the api used to connect to discord
 ```
+
+Copy the bot to the folder
+```
+Download this project as a zip file then move the zip file to the folder you created
+then unzip it there then put token in the token.json to get a token goto https://discordapp.com/developers/applications/ 
+after you have token in token.json and have installed discord.js you can start bot by typing ``node app.js``
+```
