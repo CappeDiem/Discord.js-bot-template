@@ -17,15 +17,16 @@ Node.js
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Install Node.js
 
 ```
 Install Node.js and create a folder on your computer
 ```
 
-After that
+Installing discord.js and making the bot folder
 
 ```
+After you have node.js
 On windows open cmd and copy the folder location from top of the file browser
 and on cmd ty cd "then paste the location" and enter
 Then do in the cmd ``npm i discord.js`` to install discord.js 
