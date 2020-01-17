@@ -22,7 +22,8 @@ Install Node.js
 ```
 Install Node.js and create a folder on your computer
 ```
-[Node.js](https://nodejs.org/en/)
+[Node.js](https://nodejs.org/en/) 
+
 Installing discord.js and making the bot folder
 
 ```
@@ -41,6 +42,7 @@ after you have token in token.json and have installed discord.js you can start b
 ```
 [Discord Developer Site](https://discordapp.com/developers/applications/)
 
-this bot is built with
-[discord.js](https://discord.js.org/#/)
-[Node.js](https://nodejs.org/en/)
+## Built With
+
+* [Node.js](https://nodejs.org/en/) - the base that the bot runs on
+* [discord.js](https://discord.js.org/#/) - node.js link to the discord bot api
