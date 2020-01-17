@@ -22,7 +22,7 @@ Install Node.js
 ```
 Install Node.js and create a folder on your computer
 ```
-
+[Node.js](https://nodejs.org/en/)
 Installing discord.js and making the bot folder
 
 ```
@@ -36,6 +36,11 @@ what is the api used to connect to discord
 Copy the bot to the folder
 ```
 Download this project as a zip file then move the zip file to the folder you created
-then unzip it there then put token in the token.json to get a token goto [Discord Developer Site](https://discordapp.com/developers/applications/)
-after you have token in token.json and have installed discord.js you can start bot by typing ``node app.js``
+then unzip it there then put token in the token.json to get a token goto Discord Developer Site link below
+after you have token in token.json and have installed discord.js you can start bot by typing node app.js
 ```
+[Discord Developer Site](https://discordapp.com/developers/applications/)
+
+this bot is built with
+[discord.js](https://discord.js.org/#/)
+[Node.js](https://nodejs.org/en/)
