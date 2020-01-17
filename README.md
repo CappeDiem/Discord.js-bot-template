@@ -6,6 +6,7 @@ Change Token in ``token.json`` and prefix in ``config.json``
 make commands in ``commands`` folder
 
 there is ``ping`` command in ``commands`` folder
+the default prefix of the bot is ``!`` you can change this in the ``config.json``
 ### Prerequisites
 
 What things you need to install the software and how to install them
