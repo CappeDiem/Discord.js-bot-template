@@ -15,7 +15,7 @@ Node.js
 ```
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of how to get the bot running
 
 Install Node.js
 
