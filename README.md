@@ -20,7 +20,10 @@ A step by step series of examples that tell you how to get a development env run
 Install Node.js
 
 ```
-Install Node.js and create a folder on your computer
+Install Node.js
+goto downloads
+you can choose the lts or the current version of node.js depending on what you want
+then download the installer according to your operating system
 ```
 [Node.js](https://nodejs.org/en/) 
 
@@ -28,6 +31,7 @@ Installing discord.js and making the bot folder
 
 ```
 After you have node.js
+create a folder on your computer
 On windows open cmd and copy the folder location from top of the file browser
 and on cmd ty cd "then paste the location" and enter
 Then do in the cmd npm i discord.js to install discord.js 
