@@ -20,11 +20,14 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-After you have Node.js create a folder and do ``npm i discord.js`` to install discord.js what is the api used to connect to discord
+Install Node.js and create a folder on your computer
 ```
 
-And repeat
+After that
 
 ```
-until finished
+On windows open cmd and copy the folder location from top of the file browser
+and on cmd ty cd "then paste the location" and enter
+Then do in the cmd ``npm i discord.js`` to install discord.js 
+what is the api used to connect to discord
 ```
