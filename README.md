@@ -31,6 +31,7 @@ After you have node.js
 On windows open cmd and copy the folder location from top of the file browser
 and on cmd ty cd "then paste the location" and enter
 Then do in the cmd npm i discord.js to install discord.js 
+before you do the install command make sure the cmd window is in the right folder
 what is the api used to connect to discord
 ```
 
@@ -41,6 +42,12 @@ then unzip it there then put token in the token.json to get a token goto Discord
 after you have token in token.json and have installed discord.js you can start bot by typing node app.js
 ```
 [Discord Developer Site](https://discordapp.com/developers/applications/)
+
+Other things you can do for bot develoment
+```
+you can install nodemon to restart the bot everytime the bot file is changed
+to install nodemon globally type npm i -g nodemon
+```
 
 ## Authors
 
