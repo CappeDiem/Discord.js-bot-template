@@ -53,7 +53,7 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   
   //Check for prefix
-  if(!cmd.startsWith(guildConf[message.guild.id].prefix)) return;
+  if(!cmd.startsWith(config.prefix)) return;
   
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
