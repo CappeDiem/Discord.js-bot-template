@@ -34,7 +34,7 @@ Installing discord.js and making the bot folder
 After you have node.js
 create a folder on your computer
 On windows open cmd and copy the folder location from top of the file browser
-and on cmd ty cd "then paste the location" and enter
+and on cmd type cd "then paste the location" and enter
 Then do in the cmd npm i discord.js to install discord.js 
 before you do the install command make sure the cmd window is in the right folder
 what is the api used to connect to discord
