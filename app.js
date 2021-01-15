@@ -37,7 +37,7 @@ bot.on('guildMemberAdd', member => {
 
 //Playing Message
 bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
 
   bot.user.setActivity("My Code", {type: "PLAYING"});
 });
