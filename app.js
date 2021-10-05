@@ -2,27 +2,16 @@ const config = require("./config.json");
 const token = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
-const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MEMBERS"] });
+const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES",  "GUILD_MEMBERS"] });
 bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
-    if(err) console.log(err);
+const commandFiles = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'))
+for (const file of commandFiles) {
+    const props = require(`./commands/${file}`)
+    console.log(`${file} loaded`)
+    bot.commands.set(props.help.name, props)
+}
 
-    //Filter the list to javascript files and if there isnt any return
-    let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if(jsfile.length <= 0){
-      console.log("Couldn't find commands.");
-      return;
-    }
-
-    //Register each command to the collection
-    jsfile.forEach((f, i) =>{
-      let props = require(`./commands/${f}`);
-      console.log(`${f} loaded!`);
-      bot.commands.set(props.help.name, props);
-    });
-
-});
 //When a member join add a role called Member to them and welcome them in a channel welcome
 bot.on('guildMemberAdd', member => {
     //Log the newly joined member to console
