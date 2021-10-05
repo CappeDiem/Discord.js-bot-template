@@ -1,0 +1,42 @@
+{
+  "name": "discord.js-bot-template",
+  "version": "1.0.0",
+  "description": "basic bot template with command handler",
+  "main": "app.js",
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "callsites": "^3.1.0",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0",
+    "dot-prop": "^6.0.1",
+    "is-obj": "^2.0.0",
+    "lodash.isequal": "^4.5.0",
+    "mime-db": "^1.50.0",
+    "mime-types": "^2.1.33",
+    "node-fetch": "^2.6.5",
+    "ow": "^0.27.0",
+    "tr46": "^0.0.3",
+    "ts-mixer": "^6.0.0",
+    "tslib": "^2.3.1",
+    "type-fest": "^1.4.0",
+    "vali-date": "^1.0.0",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0",
+    "ws": "^7.5.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CappeDiem/Discord.js-bot-template.git"
+  },
+  "author": "CappeDiem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CappeDiem/Discord.js-bot-template/issues"
+  },
+  "homepage": "https://github.com/CappeDiem/Discord.js-bot-template#readme"
+}
