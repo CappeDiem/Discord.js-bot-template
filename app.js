@@ -2,7 +2,7 @@ const config = require("./config.json");
 const token = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
-const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES",  "GUILD_MEMBERS"] });
+const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] });
 bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'))
@@ -12,22 +12,17 @@ for (const file of commandFiles) {
     bot.commands.set(props.help.name, props)
 }
 
-//When a member join add a role called Member to them and welcome them in a channel welcome
-bot.on('guildMemberAdd', member => {
-    //Log the newly joined member to console
-    console.log('User' + member.user.tag + ' has joined the server!');
+// Load Event files from events folder
+const eventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'))
 
-    //Find a channel named welcome and send a Welcome message
-    bot.channels.cache.find(c => c.name === "welcome").send('Welcome '+ member.user.username)
-
-    //Find a role called Member
-    let role = member.guild.roles.cache.find(r => r.name === 'Member');
-
-    //After 10 seconds add the member role to new user
-    setTimeout(function(){
-        member.roles.add(role);
-    }, 10000);
-});
+for (const file of eventFiles) {
+    const event = require(`./events/${file}`)
+    if(event.once) {
+        bot.once(event.name, (...args) => event.execute(...args, bot))
+    } else {
+        bot.on(event.name, (...args) => event.execute(...args, bot))
+    }
+}
 
 //Command Manager
 bot.on("message", async message => {
