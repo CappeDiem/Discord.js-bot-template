@@ -29,15 +29,6 @@ bot.on('guildMemberAdd', member => {
     }, 10000);
 });
 
-//Playing Message
-bot.on("ready", async () => {
-    //Log Bot's username and the amount of servers its in to console
-    console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
-
-    //Set the Presence of the bot user
-    bot.user.setActivity("My Code", {type: "PLAYING"});
-});
-
 //Command Manager
 bot.on("message", async message => {
     //Check if author is a bot or the message was sent in dms and return
