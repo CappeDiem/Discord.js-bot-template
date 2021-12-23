@@ -1,6 +1,8 @@
 # Discord.js Discord bot template
 basic bot template with command handler
 
+**This is gonna be rewritten**
+
 Change Token in ``token.json``
 
 make commands in ``commands`` folder
