@@ -1,5 +1,5 @@
 exports.run = async (bot, message, args) => {
-    message.channel.send("My ping is \`" + client.ws.ping + " ms\`");
+    message.channel.send("My ping is \`" + bot.ws.ping + " ms\`");
 }
 
 exports.help = {
