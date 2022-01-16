@@ -6,6 +6,6 @@ module.exports = {
         console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);
 
         //Set the Presence of the bot user
-        bot.user.setActivity("My Code", {type: "PLAYING"});
+        bot.user.setPresence({ activities: [{ name: 'My code'}] });
     }
 }
