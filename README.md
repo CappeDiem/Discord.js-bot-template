@@ -1,5 +1,5 @@
 # Discord.js Discord bot template
-Basic bot template with command handler.
+Basic bot template with command handler and event handler.
 
 **This is gonna be rewritten**
 
