@@ -1,12 +1,19 @@
 const { prefix, token } = require("./config.json");
 
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, Partials} = require('discord.js');
 const bot = new Client({ 
-    intents: [
-        Intents.FLAGS.GUILDS, 
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_MEMBERS
-    ] 
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent
+  ],
+  partials: [
+    Partials.Message,
+    Partials.GuildMember,
+    Partials.User,
+    Partials.Channel
+  ]
 });
 
 const fs = require("fs");
@@ -17,7 +24,7 @@ const commandFiles = fs.readdirSync('./commands/').filter(f => f.endsWith('.js')
 for (const file of commandFiles) {
     const props = require(`./commands/${file}`)
     console.log(`${file} loaded`)
-    bot.commands.set(props.config.name, props)
+    bot.commands.set(props.name, props)
 }
 
 const commandSubFolders = fs.readdirSync('./commands/').filter(f => !f.endsWith('.js'))
@@ -27,7 +34,7 @@ commandSubFolders.forEach(folder => {
     for (const file of commandFiles) {
         const props = require(`./commands/${folder}/${file}`)
         console.log(`${file} loaded from ${folder}`)
-        bot.commands.set(props.config.name, props)
+        bot.commands.set(props.name, props)
     }
 });
 
