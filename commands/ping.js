@@ -1,10 +1,8 @@
 module.exports = {
-    config: {
-        name: 'ping',
-        description: 'Get ping of the bot',
-        usage: `!ping`,
-    },
-    async run (bot,message,args) {
-        message.channel.send("My ping is \`" + bot.ws.ping + " ms\`");
-    }
+  name: 'ping',
+  description: 'Get ping of the bot',
+  ephemeral: true,
+  async execute(interaction, args, bot) {
+    interaction.reply("My ping is \`" + bot.ws.ping + " ms\`");
+  }
 }
