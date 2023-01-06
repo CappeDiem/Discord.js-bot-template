@@ -49,7 +49,7 @@ for (const file of eventFiles) {
         bot.on(event.name, (...args) => event.execute(...args, bot))
     }
 }
-
+/*
 //Command Manager
 bot.on("messageCreate", async message => {
     //Check if author is a bot or the message was sent in dms and return
@@ -69,6 +69,6 @@ bot.on("messageCreate", async message => {
     if(commandfile) commandfile.run(bot,message,args);
 
 });
-
+*/
 //Token needed in config.json
 bot.login(token);
