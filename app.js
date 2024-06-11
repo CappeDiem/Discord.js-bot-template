@@ -1,27 +1,27 @@
 const { prefix, token } = require("./config.json");
-
+const fs = require("fs");
 const { Client, Intents, Collection } = require('discord.js');
-const bot = new Client({ 
+const bot = new Client({
     intents: [
-        Intents.FLAGS.GUILDS, 
+        Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
         Intents.FLAGS.GUILD_MEMBERS
-    ] 
+    ]
 });
 
-const fs = require("fs");
-
+// Create a collection to store commands inside the bot object
 bot.commands = new Collection();
 
+// Load Command files from commands folder
 const commandFiles = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'))
 for (const file of commandFiles) {
     const props = require(`./commands/${file}`)
     console.log(`${file} loaded`)
     bot.commands.set(props.config.name, props)
 }
-
+// Get folders inside commands folder
 const commandSubFolders = fs.readdirSync('./commands/').filter(f => !f.endsWith('.js'))
-
+// Load Command files from subfolders inside commands folder
 commandSubFolders.forEach(folder => {
     const commandFiles = fs.readdirSync(`./commands/${folder}/`).filter(f => f.endsWith('.js'))
     for (const file of commandFiles) {
@@ -30,10 +30,8 @@ commandSubFolders.forEach(folder => {
         bot.commands.set(props.config.name, props)
     }
 });
-
 // Load Event files from events folder
 const eventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'))
-
 for (const file of eventFiles) {
     const event = require(`./events/${file}`)
     if(event.once) {
@@ -43,25 +41,25 @@ for (const file of eventFiles) {
     }
 }
 
-//Command Manager
+// Run when bot receives messageCreate event and then run checks to see if the message is a command
 bot.on("messageCreate", async message => {
-    //Check if author is a bot or the message was sent in dms and return
+    // Check if author is a bot or the message was sent in dms and return
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
-    //get prefix from config and prepare message so it can be read as a command
+    // Get prefix from config and prepare message so it is forwarded correctly to the command
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-    //Check for prefix
+    // Check that the message starts with the prefix and return if it does not
     if(!cmd.startsWith(prefix)) return;
 
-    //Get the command from the commands collection and then if the command is found run the command file
+    // Get command from command collection and run it
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot,message,args);
 
 });
 
-//Token needed in config.json
+// Token needed in config.json
 bot.login(token);
