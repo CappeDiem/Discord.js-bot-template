@@ -1,6 +1,8 @@
 # Discord.js Discord bot template
 Basic bot template with command handler and event handler.
 
+## This is being updated to discord.js v14 and to use slash commands
+
 **This README is gonna be rewritten later**
 
 Change Token and prefix in ``config.json``
