@@ -1,11 +1,17 @@
 const { prefix, token } = require("./config.json");
 const fs = require("fs");
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, GatewayIntentsString, Partials, Collection } = require('discord.js');
 const bot = new Client({
     intents: [
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_MEMBERS
+      GatewayIntentsString.Guilds,
+      GatewayIntentsString.GuildMembers,
+      GatewayIntentsString.GuildMessages,
+      GatewayIntentsString.MessageContent,
+    ],
+    partials: [
+      Partials.Channel,
+      Partials.Message,
+      Partials.User
     ]
 });
 
