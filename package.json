@@ -9,7 +9,7 @@
     "combined-stream": "^1.0.8",
     "delayed-stream": "^1.0.0",
     "discord-api-types": "^0.22.0",
-    "discord.js": "^13.17.1",
+    "discord.js": "^14.15.3",
     "dot-prop": "^6.0.1",
     "is-obj": "^2.0.0",
     "lodash.isequal": "^4.5.0",
