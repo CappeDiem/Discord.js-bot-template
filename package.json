@@ -24,7 +24,7 @@
     "vali-date": "^1.0.0",
     "webidl-conversions": "^3.0.1",
     "whatwg-url": "^5.0.0",
-    "ws": "^7.5.5"
+    "ws": "^7.5.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
