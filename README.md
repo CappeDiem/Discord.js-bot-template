@@ -1,16 +1,14 @@
 # Discord.js Discord bot template
 Basic bot template with command handler and event handler.
 
-## This is being updated to discord.js v14 and to use slash commands
+**More guidance will be added later when there's time to write it**
 
-**This README is gonna be rewritten later**
-
-Change Token and prefix in ``config.json``
+Change Token in ``config.json``
 
 Make commands in ``commands`` folder.
 
 There is ``ping`` command in ``commands`` folder
-the default prefix of the bot is ``!`` you can change this in the ``config.json``
+the bot uses slash commands and the commands are available using ``/`` in discord 
 ### Prerequisites
 
 What things you need to install the software and how to install them:
